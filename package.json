@@ -1,0 +1,17 @@
+{
+  "name": "mongo-full-sprint",
+  "version": "1.0.0",
+  "description": "Mongo DB I Mini Sprint",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Lambda School",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.2"
+  }
+}
