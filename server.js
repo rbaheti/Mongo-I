@@ -41,6 +41,30 @@ server.get('/api/users', function(req, res) {
   });
 });
 
+server.get('/api/users/:id', function(req, res) {
+  const { id } = req.params;
+
+  User.findOne({ _id: id }, function(err, users) {
+    if(err){
+      // handle error
+    } else {
+      res.status(200).json(users);
+    }
+  })
+});
+
+server.delete('/api/users/:id', function(req, res) {
+  const { id } = req.params;
+
+  User.remove({ "_id": id }, function(err, users) {
+    if(err) {
+      res.status(STATUS_SERVER_ERROR).json({error: "Cannot delete user"});
+    } else {
+      res.status(200).json(true);
+    }
+  });
+});
+
 //connect to Mongoose
 mongoose.Promise = global.Promise;
 mongoose
